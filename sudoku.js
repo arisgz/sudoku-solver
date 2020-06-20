@@ -53,7 +53,7 @@ function fetchData() {
     for (let j = 0; j < 9; j++) {
       let id = "cell-" + (i * 9 + j).toString();
       if (document.getElementById(id).value == "") continue;
-      grid[i][j] = parseInt(document.getElementById(id).value);
+      grid[i][j] = document.getElementById(id).value;
     }
   }
 }
