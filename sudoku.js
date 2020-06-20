@@ -1,5 +1,17 @@
 var grid;
 
+for (let i = 0; i < 81; i++) {
+  let id = "cell-" + i.toString();
+  document.getElementById(id).addEventListener("keyup", onChange);
+}
+
+function onChange(e) {
+  let target = e.target;
+  if (target.value > 9 || target.value < 1) {
+    target.value = "";
+  }
+}
+
 function init() {
   grid = Array(9);
 
@@ -68,7 +80,7 @@ function fill() {
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
       let id = "cell-" + (i * 9 + j);
-      document.getElementById(id).value=grid[i][j];
+      document.getElementById(id).value = grid[i][j];
     }
   }
 }
